@@ -1,0 +1,1 @@
+export const capitalizeEachWord = (word: string) => word.toLowerCase().replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())

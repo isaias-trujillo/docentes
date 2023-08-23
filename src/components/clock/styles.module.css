@@ -1,0 +1,33 @@
+.clock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+}
+
+.hours {
+    display: flex;
+    flex-direction: row;
+    gap: clamp(10px, 2.5vw, 1.5rem);
+
+    color: var(--dark, #0D0905);
+    font-family: Roboto, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: clamp(4.5vw, 5rem, 12.5vw);
+    line-height: normal;
+}
+
+.accent {
+    color: var(--tone-2, #F20574);
+}
+
+.date {
+    color: var(--tone-1, #056CF2);
+    font-family: Outfit, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-size: clamp(14px, 1.25rem, 3vw);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}

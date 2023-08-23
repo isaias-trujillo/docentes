@@ -1,0 +1,55 @@
+.light, .dark {
+    display: flex;
+    padding: 0.625rem clamp(20px, 5vw, 2.5rem);
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 1.25rem;
+
+    font-family: Outfit, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-size: clamp(14px, 2.5vw, 1rem);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    border: none;
+    width: fit-content;
+    height: fit-content;
+    justify-self: center;
+    transition: all 0.5s ease-in-out;
+}
+
+.light {
+    color: var(--dark);
+    background: white;
+    border: 1px solid var(--dark);
+}
+
+.dark {
+    color: white;
+    background: var(--dark);
+}
+
+.dark:hover {
+    background: hsl(270, 62%, 25%);
+}
+
+.dark:active {
+    background: hsl(272, 62%, 50%);
+}
+
+.light:disabled, .dark:disabled {
+    color: var(--gray-40);
+    background: var(--gray-95);
+}
+
+.light:disabled:hover, .dark:disabled:hover {
+    color: var(--gray-40);
+    background: hsl(0, 0%, 90%);
+}
+
+
+.light:disabled:hover:active, .dark:disabled:hover:active {
+    color: var(--gray-40);
+    background: hsl(0, 0%, 85%);
+}

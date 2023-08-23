@@ -1,0 +1,28 @@
+.none, .good, .bad {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    padding: 0.5rem;
+    border-radius: 4px;
+
+    width: clamp(1.5vw, 1.5rem, 2.5vw);
+    height: clamp(1.5vw, 1.5rem, 2.5vw);
+
+    border: 1px solid black;
+    color: black;
+    background-color: white;
+
+    transition: background-color 0.5s ease-in-out;
+}
+
+.none:hover, .good:hover, .bad:hover {
+    cursor: pointer;
+}
+
+.good {
+    background-color: aquamarine;
+}
+
+.bad {
+    background-color: tomato;
+}

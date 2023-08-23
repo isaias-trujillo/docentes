@@ -1,0 +1,27 @@
+.card {
+    display: grid;
+    grid-auto-flow: dense;
+    column-span: 2;
+    row-span: 2;
+
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 2rem;
+
+    border-radius: 1rem;
+
+    font-family: 'Oswald', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+    border: 1px solid var(--gray-75);
+}
+
+.title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: black;
+    grid-column: 1/span 2;
+}
+
+.subtitle, .hour {
+    font-family: 'Roboto', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}

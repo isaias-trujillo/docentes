@@ -1,0 +1,84 @@
+.password {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px, 1vh, 2rem);
+    align-self: stretch;
+}
+
+.label {
+    display: grid;
+    gap: clamp(0.25rem, 1.75vh, 1.25rem);
+}
+
+.title {
+    color: var(--dark, #0D0905);
+    font-family: Outfit, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-size: clamp(14px, 1.75vh, 1.25rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.field {
+    display: flex;
+    padding: 15px 20px;
+    align-items: center;
+    align-self: stretch;
+    border: none;
+
+    border-radius: 8px;
+    background: var(--purple-surface, #E7E3F2);
+    margin: 2px;
+
+    color: var(--gray-40, #666);
+    font-family: 'Roboto Flex', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-size: clamp(14px, 1.75vh, 1.5rem);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    transition: background-color 1s ease-in-out;
+}
+
+.field:focus {
+    background-color: hsl(256, 37%, 95%);
+    color: var(--dark);
+    border: none;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    color: black;
+}
+
+.checkbox {
+    display: grid;
+    place-content: center;
+
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.5em;
+    height: 1.5em;
+    font-size: clamp(14px, 1.5vh, 1rem);
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+}
+
+.checkbox::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--tone-1)
+}
+
+.checkbox:checked::before {
+    transform: scale(1);
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}

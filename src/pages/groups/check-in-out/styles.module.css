@@ -1,0 +1,14 @@
+.page {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 2.5rem;
+    padding: 2.5rem;
+    justify-items: center;
+}
+
+.information {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 1rem;
+    justify-content: center;
+}

@@ -1,0 +1,29 @@
+.error, .info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(12px, 1rem, 4.5vw);
+
+    width: fit-content;
+    height: fit-content;
+    justify-self: center;
+
+    padding: clamp(8px, 0.75rem, 2.5vw) clamp(8px, 1.5rem, 2.5vw);
+    border-radius: clamp(8px, 1.5rem, 2.5vw);
+    color: black;
+
+    font-size: clamp(12px, 1rem, 4.5vw);
+}
+
+.error {
+    background-color: rgba(242, 5, 116, 0.025);
+    border: 1px solid rgba(242, 5, 116, 0.5);
+}
+
+.info{
+    background-color: rgb(5, 108, 242, 0.025);
+    border: 1px solid rgba(5, 108, 242, 0.5);
+}

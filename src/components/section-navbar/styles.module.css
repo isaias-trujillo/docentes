@@ -1,0 +1,39 @@
+.navbar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    gap: clamp(0.25vw, 2rem, 2vw);
+
+    position: sticky;
+    top: 0;
+
+    justify-self: center;
+}
+
+.active, .inactive {
+    display: flex;
+    padding: clamp(0.25vw, 0.75rem, 1.25vw) clamp(0.25vw, 2rem, 2vw);
+    justify-content: center;
+    align-items: center;
+    gap: clamp(0.75vw, 2rem, 2vw);
+
+    text-decoration: none;
+
+    border-radius: 8px;
+    color: black;
+
+    transition: background-color 0.5s ease-in-out;
+}
+
+.active > span, .inactive > span {
+    font-size: clamp(1.25vw, 1.25rem, 3.5vw);
+}
+
+.active {
+    background-color: var(--tone-3, #FFEB80);
+}
+
+.inactive {
+    background-color: var(--purple-surface, #E7E3F2);
+}

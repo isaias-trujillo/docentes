@@ -1,0 +1,39 @@
+.page {
+    display: grid;
+    grid-auto-flow: row;
+    align-items: center;
+    justify-content: center;
+    width: 40rem;
+    background-color: var(--dark);
+}
+
+.cover {
+    object-fit: scale-down;
+    max-width: 100%;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.header {
+    display: flex;
+    padding: 0.9375rem clamp(10px, 5vw, 2.5rem);
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+
+    background: var(--gray-10, #251A0E);
+
+    color: white;
+    font-family: Orbitron, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-size: clamp(14px, 2.5vw, 1.5rem);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.form {
+    display: grid;
+    padding: clamp(10px, 4vh, 2.5rem);
+    gap: clamp(10px, 2.5vh, 5rem);
+    background-color: white;
+    border-radius: 0 0 1rem 1rem;
+}

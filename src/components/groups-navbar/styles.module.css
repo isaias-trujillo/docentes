@@ -1,0 +1,62 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    align-items: center;
+    gap: clamp(10px, 2.5rem, 2.5vw);
+    transition: all 0.5s ease-in-out;
+}
+
+.active, .inactive {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: clamp(10px, 1.25rem, 2.5vw);
+    gap: clamp(10px, 1.25rem, 2.5vw);
+    align-self: stretch;
+
+    width: fit-content;
+    height: fit-content;
+
+    border-radius: clamp(8px, 1rem, 1.5vw);
+
+    text-underline: none;
+    text-decoration: none;
+
+    transition: background-color 0.25s ease-in-out;
+}
+
+.active {
+    color: white;
+    background: var(--dark, #0D0905);
+}
+
+.inactive {
+    color: black;
+    background: var(--purple-surface, #E7E3F2);
+}
+
+
+@media (max-width: 1000px) {
+    .navbar {
+        flex-flow: wrap;
+    }
+    .active, .inactive {
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 775px) {
+    .active, .inactive {
+        flex-grow: 1;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 375px) {
+    .active, .inactive {
+        flex-wrap: wrap-reverse;
+    }
+}
