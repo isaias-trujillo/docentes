@@ -4,6 +4,7 @@ import StudentAttendance from "../../context/attendances/students/StudentAttenda
 import useAuth from "../../hooks/useAuth.ts";
 import {useParams} from "react-router-dom";
 import Student from "../../types/Student.ts";
+import host from "../../host.ts";
 
 export const StudentAttendanceProvider: FC<{ children: ReactNode }> = ({children}) => {
     const [loading, setLoading] = useState(false);
@@ -45,7 +46,7 @@ export const StudentAttendanceProvider: FC<{ children: ReactNode }> = ({children
         }
         const controller = new AbortController();
         const dni = teacher.dni
-        fetch(`http://localhost:80/sia-api/api/attendances/groups/${groupId}`, {
+        fetch(`${host}/sia-api/api/attendances/groups/${groupId}`, {
             signal: controller.signal,
             method: 'post',
             headers: {'Content-Type': 'application/json'},
@@ -78,14 +79,14 @@ export const StudentAttendanceProvider: FC<{ children: ReactNode }> = ({children
         }
         const dni = teacher.dni
         const controller = new AbortController();
-        fetch(`http://localhost/sia-api/api/teachers/${dni}/groups/${groupId}/students`, {signal: controller.signal})
+        fetch(`${host}/sia-api/api/teachers/${dni}/groups/${groupId}/students`, {signal: controller.signal})
             .then(res => res.json())
             .then(res => {
                 if (!res['success']) {
                     throw new Error(res['message'])
                 }
                 setError(() => undefined)
-                const attendances = (res['records'] as Student[]).map(s => ({...s, attended: false}));
+                const attendances = (res['records'] as Student[]).map(s => ({...s, attended: true}));
                 setRecords(() => attendances)
             }).catch(e => setError(() => e.message))
             .finally(() => setLoading(() => false))

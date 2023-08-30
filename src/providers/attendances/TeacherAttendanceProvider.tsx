@@ -3,6 +3,7 @@ import TeacherAttendanceContext from "../../context/attendances/teacher";
 import TeacherAttendance from "../../context/attendances/teacher/TeacherAttendance.ts";
 import useAuth from "../../hooks/useAuth.ts";
 import {useParams} from "react-router-dom";
+import host from "../../host.ts";
 
 export const TeacherAttendanceProvider: FC<{ children: ReactNode }> = ({children}) => {
     const [loading, setLoading] = useState(true)
@@ -23,7 +24,7 @@ export const TeacherAttendanceProvider: FC<{ children: ReactNode }> = ({children
         }
         const controller = new AbortController();
         const dni = teacher.dni;
-        fetch(`http://localhost:80/sia-api/api/attendances/teacher/${dni}/groups/${groupId}`, {
+        fetch(`${host}/sia-api/api/attendances/teacher/${dni}/groups/${groupId}`, {
             signal: controller.signal,
             method: 'post',
             headers: {'Content-Type': 'application/json'}
@@ -54,7 +55,7 @@ export const TeacherAttendanceProvider: FC<{ children: ReactNode }> = ({children
                 return;
             }
             const dni = teacher.dni;
-            fetch(`http://localhost:80/sia-api/api/attendances/teacher/${dni}/groups/${groupId}`, {signal: controller.signal})
+            fetch(`${host}/sia-api/api/attendances/teacher/${dni}/groups/${groupId}`, {signal: controller.signal})
                 .then(res => res.json())
                 .then(res => {
                     if (!res['success']) {

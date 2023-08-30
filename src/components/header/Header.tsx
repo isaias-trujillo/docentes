@@ -7,7 +7,7 @@ import {capitalizeEachWord} from "../../utils/capitalizeEachWord.ts";
 
 export const Header: FC = () => {
     const {teacher, logout} = useAuth();
-    return <section className={styles.header}>
+    return <section id={'teacher-header'} className={styles.header}>
         <div className={styles.teacher}>
             <span
                 className={styles.accent}>Docente:</span><span>{capitalizeEachWord(teacher?.["full name"] ?? "Mr. Nobody")}</span>

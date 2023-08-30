@@ -23,7 +23,7 @@ export const Login: FC = () => {
         }
         const first = groups.length >= 1 ? groups[0] : undefined;
         if (!first) {
-            return <span>U don't have any group.</span>
+            return <span>¡No tiene ningún grupo!</span>
         }
         return <Navigate to={`/grupos/${first.id}/marcar-entrada-salida`}/>
     }

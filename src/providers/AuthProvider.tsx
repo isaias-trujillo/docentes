@@ -1,6 +1,7 @@
 import {FC, ReactNode, useEffect, useState} from "react";
 import AuthContext from "../context/auth";
 import Teacher from "../types/Teacher.ts";
+import host from "../host.ts";
 
 export const AuthProvider: FC<{ children: ReactNode }> = ({children}) => {
     const [loading, setLoading] = useState(false);
@@ -14,7 +15,7 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({children}) => {
             return;
         }
         setLoading(() => true)
-        fetch("http://localhost/sia-api/api/auth", {
+        fetch(`${host}/sia-api/api/auth`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({dni: dni}),

@@ -27,7 +27,7 @@
     border: none;
 
     border-radius: 8px;
-    background: var(--purple-surface, #E7E3F2);
+    background: var(--purple-surface);
     margin: 2px;
 
     color: var(--gray-40, #666);
@@ -73,7 +73,6 @@
     width: 0.65em;
     height: 0.65em;
     transform: scale(0);
-    transition: 120ms transform ease-in-out;
     box-shadow: inset 1em 1em var(--tone-1)
 }
 

@@ -1,6 +1,7 @@
 import {FC, ReactNode, useEffect, useState} from "react";
 import ClockContext from "../context/clock";
 import TimeInfo from "../types/TimeInfo.ts";
+import host from "../host.ts";
 
 const buildTimeInfoFromDate = (date: Date): TimeInfo => {
     let hours = date.getHours();
@@ -38,7 +39,7 @@ export const ClockProvider: FC<{ children: ReactNode }> = ({children}) => {
         }
         setLoading(() => true)
         const controller = new AbortController();
-        fetch("http://localhost:80/sia-api/api/clock", {signal: controller.signal})
+        fetch(`${host}/sia-api/api/clock`, {signal: controller.signal})
             .then(res => res.json())
             .then(res => {
                 if (!res['success']) {

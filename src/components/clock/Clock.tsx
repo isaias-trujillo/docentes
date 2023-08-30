@@ -1,6 +1,6 @@
 import {FC} from "react";
-import styles from "./styles.module.css"
 import {useClock} from "../../hooks/useClock.ts";
+import styles from "./styles.module.css"
 
 export const Clock: FC = () => {
     const {loading, getInfo} = useClock();

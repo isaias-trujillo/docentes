@@ -10,8 +10,8 @@ export const CheckBox: FC<CheckBoxProps> = ({initialState= false, onClick}) => {
     useEffect(() => {
         if (!initialState) {
            // setIcon(() => <span className="material-symbols-outlined">close</span>)
-           setIcon(() => undefined)
-            setStyle(() => checkboxStyles.none)
+           setIcon(() => <span className="material-symbols-outlined">close</span>)
+            setStyle(() => checkboxStyles.bad)
         }
         if (initialState) {
             setIcon(() => <span className="material-symbols-outlined">done_all</span>)
@@ -21,19 +21,16 @@ export const CheckBox: FC<CheckBoxProps> = ({initialState= false, onClick}) => {
     }, [initialState]);
 
     return <div className={style} onClick={() => {
-        switch (state) {
-            case false:
-                setState(() => true)
-                setIcon(() => <span className="material-symbols-outlined">done_all</span>)
-                setStyle(() => checkboxStyles.good)
-                break;
-            case true:
-                setState(() => false)
-                //setIcon(()=> <span className="material-symbols-outlined">close</span>)
-                setIcon(()=> undefined)
-                setStyle(() => checkboxStyles.none)
-                break;
+        if (state) {
+            //setIcon(()=> <span className="material-symbols-outlined">close</span>)
+            setIcon(() => <span className="material-symbols-outlined">close</span>)
+            setStyle(() => checkboxStyles.bad)
         }
+        if (!state) {
+            setIcon(() => <span className="material-symbols-outlined">done_all</span>)
+            setStyle(() => checkboxStyles.good)
+        }
+        setState(prevState => !prevState)
         onClick(state)
     }}>{icon}</div>
 }

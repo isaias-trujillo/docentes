@@ -5,10 +5,10 @@
     row-span: 2;
 
     align-items: flex-start;
-    gap: 1rem;
-    padding: 2rem;
+    gap: clamp(0.5vw, 1rem, 2.5vw);
+    padding: clamp(1vw, 2rem, 3.5vw);
 
-    border-radius: 1rem;
+    border-radius: clamp(8px, 0.75rem, 2.5vw);
 
     font-family: 'Oswald', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
@@ -16,12 +16,13 @@
 }
 
 .title {
-    font-size: 1.1rem;
+    font-size: clamp(16px, 2.5vw, 1rem);
     font-weight: bold;
     color: black;
     grid-column: 1/span 2;
 }
 
 .subtitle, .hour {
-    font-family: 'Roboto', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+        font-family: 'Roboto', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-size: clamp(14px, 2.5vw, 1rem);
 }

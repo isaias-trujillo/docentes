@@ -1,14 +1,14 @@
 .page {
     display: grid;
     grid-auto-flow: row;
-    gap: 2.5rem;
-    padding: 2.5rem;
+    gap: clamp(0.75vh, 2.5rem, 2.5vh);
+    padding: clamp(0.75vh, 2.5rem, 2.5vw);
     justify-items: center;
 }
 
 .information {
     display: grid;
     grid-auto-flow: row;
-    gap: 1rem;
+    gap: clamp(0.25vw, 1rem, 2vw);
     justify-content: center;
 }

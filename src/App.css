@@ -6,5 +6,5 @@
     width: 100dvw;
     height: 100dvh;
 
-    background-color: var(--dark);
+    background-color: hsl(60, 12%, 98%);
 }
